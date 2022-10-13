@@ -14,7 +14,7 @@ with st.expander('Adicionar um campo'):
     a = st.number_input('Aluguer das raquetes [€]')
     b = st.selectbox(
         'Paga-se bolas?',
-        ('sim', 'não'))
+        ('sim', 'nao'))
     c = st.text_input('Condições do campo')
     
     if len(z) != 0 and len(n) != 0 and len(c) != 0:
