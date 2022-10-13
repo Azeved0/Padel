@@ -4,7 +4,7 @@ import pandas as pd
 st.set_page_config(layout="wide")
 st.title('Courts review')
 
-df = pd.read_csv(r'/home/spyder/Padel.csv', sep=',')
+df = pd.read_csv(r'padel.csv', sep=',')
 
 with st.expander('Adicionar um campo'):
     
@@ -25,4 +25,4 @@ with st.expander('Adicionar um campo'):
 
 st.write(df)
 
-df.to_csv(r'/home/spyder/Padel.csv', index=False)
+df.to_csv(r'padel.csv', index=False)
