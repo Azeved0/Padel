@@ -6,6 +6,22 @@ st.title('Courts review')
 
 df = pd.read_csv(r'padel.csv', sep=',')
 
+court = st.selectbox(
+        'Qual o campo que deseja consultar?: ',
+        options=df['nome'])
+
+df2 = df.loc[df['nome'] == court]
+df2.reset_index(level=None, drop=True, inplace=True)
+st.header(df2['nome'][0])
+st.write(df2['zona'][0])
+col1, col2, col3 = st.columns(3)
+col1.metric('Preço do Campo [€/h]',df2['preco do campo [euros/h]'][0])
+col2.metric('Aluguer das raquetes [€]',df2['aluguer das raquetes [euros]'][0])
+col3.metric('Compra-se as bolas?',df2['paga-se bolas?'][0])
+
+st.title('')
+
+
 with st.expander('Adicionar um campo'):
     
     z = st.text_input('Zona')
