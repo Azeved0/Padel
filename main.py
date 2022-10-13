@@ -39,6 +39,7 @@ with st.expander('Adicionar um campo'):
             df.loc[len(df)] = [z,n,p,a,b,c]
             df.reset_index()
 
-st.write(df)
+st.header('Lista com todos os campos')
+st.dataframe(df)
 
 df.to_csv(r'padel.csv', index=False)
